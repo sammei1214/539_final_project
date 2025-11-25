@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Confirmation Bias - Cognitive Bias Explorer</title>
+</head>
+<body>
+
+    <header>
+        <div class="skip"><a href="#main">Skip to Main Content</a></div>
+        <nav>
+            <div class="site-name">Cognitive Bias Explorer</div>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="confirmation-bias.html" class="current">Confirmation Bias</a></li>
+                <li class="nav-item"><a href="anchoring-bias.html">Anchoring Bias</a></li>
+                <li class="nav-item"><a href="availability-bias.html">Availability Bias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="module-header" aria-labelledby="module-title">
+            <div class="module-header-image">
+                <img src="images/bias-1.webp" alt="" role="presentation">
+            </div>
+            <div class="module-header-content">
+                <h1 id="module-title">Confirmation Bias</h1>
+                <p>Confirmation bias is the tendency to search for, interpret, and recall information in a way that confirms our preexisting beliefs. This interactive demonstration will reveal how we naturally gravitate toward evidence that supports our initial assumptions.</p>
+            </div>
+        </section>
+
+        <section class="interactive-module" aria-labelledby="demo-title">
+            <h2 id="demo-title">Interactive Demonstration</h2>
+            <div class="scenario">
+                <h3>Scenario: Is coffee good or bad for your health?</h3>
+                <p>Imagine you believe that coffee is healthy. Below are several research findings about coffee. Select the pieces of evidence you find most convincing or relevant.</p>
+            </div>
+
+            <form>
+                <div class="evidence-container" role="group" aria-label="Evidence selection">
+                    <div class="evidence-item" data-type="positive">
+                        <input type="checkbox" id="evidence1" name="evidence" value="positive">
+                        <label for="evidence1">Study shows coffee drinkers have lower risk of certain diseases</label>
+                    </div>
+
+                    <div class="evidence-item" data-type="negative">
+                        <input type="checkbox" id="evidence2" name="evidence" value="negative">
+                        <label for="evidence2">Research links excessive coffee consumption to increased anxiety</label>
+                    </div>
+
+                    <div class="evidence-item" data-type="positive">
+                        <input type="checkbox" id="evidence3" name="evidence" value="positive">
+                        <label for="evidence3">Coffee contains beneficial antioxidants</label>
+                    </div>
+
+                    <div class="evidence-item" data-type="negative">
+                        <input type="checkbox" id="evidence4" name="evidence" value="negative">
+                        <label for="evidence4">High coffee intake may disrupt sleep patterns</label>
+                    </div>
+
+                    <div class="evidence-item" data-type="positive">
+                        <input type="checkbox" id="evidence5" name="evidence" value="positive">
+                        <label for="evidence5">Studies suggest coffee improves cognitive function</label>
+                    </div>
+
+                    <div class="evidence-item" data-type="negative">
+                        <input type="checkbox" id="evidence6" name="evidence" value="negative">
+                        <label for="evidence6">Coffee consumption can lead to dependency and withdrawal symptoms</label>
+                    </div>
+                </div>
+
+                <button type="button" id="submit-evidence" class="submit-btn">Analyze My Selections</button>
+            </form>
+
+            <div id="feedback" class="feedback hidden" role="status" aria-live="polite" aria-atomic="true">
+                <h3>Your Results</h3>
+                <p id="feedback-text"></p>
+                <div class="insight">
+                    <h4>Understanding Confirmation Bias</h4>
+                    <p>Most people tend to select evidence that aligns with their initial belief. This demonstrates how confirmation bias influences our information gathering and decision-making processes. In real life, this can prevent us from considering alternative viewpoints and making fully informed decisions.</p>
+                </div>
+                <button id="reset-btn" class="reset-btn">Try Again</button>
+            </div>
+        </section>
+
+        <section class="learn-more" aria-labelledby="learn-more-title">
+            <h2 id="learn-more-title">Learn More</h2>
+            <p>Confirmation bias affects how we consume news, evaluate political candidates, and make personal decisions. Being aware of this bias can help us actively seek out diverse perspectives and challenge our own assumptions.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-site-name">Cognitive Bias Explorer</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="confirmation-bias.html">Confirmation Bias</a></li>
+                    <li><a href="anchoring-bias.html">Anchoring Bias</a></li>
+                    <li><a href="availability-bias.html">Availability Bias</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/confirmation-bias.js"></script>
+</body>
+</html>

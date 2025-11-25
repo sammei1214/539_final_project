@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Availability Bias - Cognitive Bias Explorer</title>
+</head>
+<body>
+
+    <header>
+        <div class="skip"><a href="#main">Skip to Main Content</a></div>
+        <nav>
+            <div class="site-name">Cognitive Bias Explorer</div>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="confirmation-bias.html">Confirmation Bias</a></li>
+                <li class="nav-item"><a href="anchoring-bias.html">Anchoring Bias</a></li>
+                <li class="nav-item"><a href="availability-bias.html" class="current">Availability Bias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="module-header" aria-labelledby="module-title">
+            <div class="module-header-image">
+                <img src="images/bias-3.webp" alt="" role="presentation">
+            </div>
+            <div class="module-header-content">
+                <h1 id="module-title">Availability Bias</h1>
+                <p>Availability bias is the tendency to overestimate the likelihood of events based on how easily examples come to mind. Recent, vivid, or emotionally charged events are more mentally available, leading us to believe they occur more frequently than they actually do.</p>
+            </div>
+        </section>
+
+        <section class="interactive-module" aria-labelledby="demo-title">
+            <h2 id="demo-title">Interactive Demonstration</h2>
+            <div class="scenario">
+                <h3>Scenario: Risk Assessment Challenge</h3>
+                <p>You will be presented with a brief news scenario, followed by questions about risk perception. Answer quickly based on your immediate intuition.</p>
+            </div>
+
+            <div id="news-stage" class="news-container">
+                <div class="news-article">
+                    <h3>Recent Headlines</h3>
+                    <div class="headline">
+                        <p class="headline-text">Local Airport Reports Increased Security After Incident</p>
+                    </div>
+                    <div class="headline">
+                        <p class="headline-text">Travel Experts Warn of Holiday Flight Disruptions</p>
+                    </div>
+                    <div class="headline">
+                        <p class="headline-text">Passenger Describes Turbulent Flight Experience</p>
+                    </div>
+                </div>
+                <button id="continue-btn" class="submit-btn">Continue to Questions</button>
+            </div>
+
+            <div id="question-stage" class="question-container hidden">
+                <div class="question-prompt">
+                    <h3>Quick Decision</h3>
+                    <p>You have 15 seconds to answer each question based on your gut feeling.</p>
+                    <p class="timer" role="timer" aria-live="polite" aria-atomic="true">Time remaining: <span id="timer">15</span> seconds</p>
+                </div>
+
+                <div id="question-content" class="question-content">
+                    <p id="question-text" class="question-text"></p>
+                    <div class="answer-options" role="group" aria-label="Answer options">
+                        <button class="option-btn" data-option="a"></button>
+                        <button class="option-btn" data-option="b"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="feedback" class="feedback hidden" role="status" aria-live="polite" aria-atomic="true">
+                <h3>Your Results</h3>
+                <p id="feedback-text"></p>
+                <div class="insight">
+                    <h4>Understanding Availability Bias</h4>
+                    <p>After reading news about flight incidents, most people overestimate the risk of air travel, even though statistically it remains one of the safest forms of transportation. The vivid headlines made flight risks more mentally available, influencing your perception. This demonstrates how media coverage and memorable events can distort our risk assessments.</p>
+                    <p>In reality, you are far more likely to be injured in a car accident during your daily commute than in a plane crash, but car accidents receive less dramatic media coverage and feel more routine.</p>
+                </div>
+                <button id="reset-btn" class="reset-btn">Try Again</button>
+            </div>
+        </section>
+
+        <section class="learn-more" aria-labelledby="learn-more-title">
+            <h2 id="learn-more-title">Learn More</h2>
+            <p>Availability bias affects how we perceive risks in healthcare, finance, and daily life. News media often amplifies rare but dramatic events, making them seem more common than they are. Understanding this bias can help you make more rational decisions based on actual statistics rather than memorable examples.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-site-name">Cognitive Bias Explorer</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="confirmation-bias.html">Confirmation Bias</a></li>
+                    <li><a href="anchoring-bias.html">Anchoring Bias</a></li>
+                    <li><a href="availability-bias.html">Availability Bias</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/availability-bias.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Anchoring Bias - Cognitive Bias Explorer</title>
+</head>
+<body>
+
+    <header>
+        <div class="skip"><a href="#main">Skip to Main Content</a></div>
+        <nav>
+            <div class="site-name">Cognitive Bias Explorer</div>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="confirmation-bias.html">Confirmation Bias</a></li>
+                <li class="nav-item"><a href="anchoring-bias.html" class="current">Anchoring Bias</a></li>
+                <li class="nav-item"><a href="availability-bias.html">Availability Bias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="module-header" aria-labelledby="module-title">
+            <div class="module-header-image">
+                <img src="images/bias-2.webp" alt="" role="presentation">
+            </div>
+            <div class="module-header-content">
+                <h1 id="module-title">Anchoring Bias</h1>
+                <p>Anchoring bias occurs when we rely too heavily on the first piece of information we receive when making decisions. This initial information serves as an anchor that influences all subsequent judgments, even when the anchor is arbitrary or irrelevant.</p>
+            </div>
+        </section>
+
+        <section class="interactive-module" aria-labelledby="demo-title">
+            <h2 id="demo-title">Interactive Demonstration</h2>
+            <div class="scenario">
+                <h3>Scenario: Price Estimation Challenge</h3>
+                <p>You will be asked to estimate the price of a product. Pay attention to how initial information might influence your judgment.</p>
+            </div>
+
+            <div id="anchor-stage" class="anchor-container">
+                <div class="anchor-prompt">
+                    <p id="anchor-question">Before we begin, please answer this quick question:</p>
+                    <p id="anchor-text" class="anchor-value" role="text"></p>
+                    <div class="answer-buttons" role="group" aria-label="Answer options">
+                        <button class="answer-btn" data-answer="higher" aria-label="Answer: Higher than the stated price">Higher</button>
+                        <button class="answer-btn" data-answer="lower" aria-label="Answer: Lower than the stated price">Lower</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="estimation-stage" class="estimation-container hidden">
+                <div class="product-info">
+                    <h3>Estimate the Price</h3>
+                    <p>A high-quality wireless keyboard with backlit keys and ergonomic design.</p>
+                </div>
+
+                <form>
+                    <div class="input-group">
+                        <label for="price-estimate">Your estimated price:</label>
+                        <div class="price-input">
+                            <span class="currency" aria-hidden="true">$</span>
+                            <input type="number" id="price-estimate" name="price-estimate" min="0" step="1" required aria-required="true" aria-describedby="price-help">
+                            <span id="price-help" class="sr-only">Enter your price estimate in dollars</span>
+                        </div>
+                    </div>
+
+                    <button type="button" id="submit-estimate" class="submit-btn">Submit Estimate</button>
+                </form>
+            </div>
+
+            <div id="feedback" class="feedback hidden" role="status" aria-live="polite" aria-atomic="true">
+                <h3>Your Results</h3>
+                <p id="feedback-text"></p>
+                <div class="insight">
+                    <h4>Understanding Anchoring Bias</h4>
+                    <p>Research shows that people who see a higher initial number tend to give higher estimates, while those who see a lower number give lower estimates. The actual retail price of this keyboard is around $80. The initial question was designed to anchor your thinking, demonstrating how arbitrary information can influence our judgments.</p>
+                </div>
+                <button id="reset-btn" class="reset-btn">Try Again</button>
+            </div>
+        </section>
+
+        <section class="learn-more" aria-labelledby="learn-more-title">
+            <h2 id="learn-more-title">Learn More</h2>
+            <p>Anchoring bias affects negotiations, shopping decisions, and financial planning. Salespeople often use this bias by showing expensive items first, making subsequent items seem more reasonable. Awareness of anchoring can help you make more objective decisions by considering multiple reference points.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-site-name">Cognitive Bias Explorer</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="confirmation-bias.html">Confirmation Bias</a></li>
+                    <li><a href="anchoring-bias.html">Anchoring Bias</a></li>
+                    <li><a href="availability-bias.html">Availability Bias</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/anchoring-bias.js"></script>
+</body>
+</html>
