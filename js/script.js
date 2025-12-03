@@ -35,11 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const moduleCards = document.querySelectorAll('.module-card');
     
     moduleCards.forEach(card => {
-        // Add perspective wrapper
-        card.style.transformStyle = 'preserve-3d';
-        card.style.transition = 'transform 0.2s ease';
-        
-        // Mouse move handler for 3D tilt effect
+        // Mouse move handler for isometric effect and shadow
         card.addEventListener('mousemove', function(e) {
             const rect = card.getBoundingClientRect();
             const cardWidth = rect.width;
@@ -49,35 +45,31 @@ document.addEventListener('DOMContentLoaded', function() {
             const mouseX = e.clientX - rect.left;
             const mouseY = e.clientY - rect.top;
             
-            // Calculate rotation values (normalized to -1 to 1)
-            const rotateX = ((mouseY / cardHeight) - 0.5) * -20; // Tilt up/down
-            const rotateY = ((mouseX / cardWidth) - 0.5) * 20;   // Tilt left/right
+            // Calculate isometric tilt values (subtle, equal angles)
+            const tiltX = ((mouseY / cardHeight) - 0.5) * -10; // Reduced to 10 degrees max
+            const tiltY = ((mouseX / cardWidth) - 0.5) * 10;   // Reduced to 10 degrees max
             
-            // Apply 3D transform
+            // Apply isometric transform
             card.style.transform = `
-                perspective(1000px)
-                rotateX(${rotateX}deg)
-                rotateY(${rotateY}deg)
-                scale3d(1.04, 1.04, 1.04)
+                rotateX(${tiltX}deg)
+                rotateY(${tiltY}deg)
+                scale(1.02)
             `;
             
-            // Add subtle shadow based on tilt
-            const shadowX = rotateY * 2;
-            const shadowY = -rotateX * 2;
-            card.style.boxShadow = `
-                ${shadowX}px ${shadowY}px 20px rgba(28, 8, 84, 0.2)
-            `;
+            // Calculate shadow position based on pointer
+            // Shadow moves opposite to pointer (away from light source)
+            const shadowX = ((mouseX / cardWidth) - 0.5) * -16; // Max 8px offset in each direction
+            const shadowY = ((mouseY / cardHeight) - 0.5) * -16; // Max 8px offset in each direction
+            
+            // Apply dynamic shadow
+            card.style.boxShadow = `${shadowX}px ${shadowY + 8}px 0 rgb(229, 225, 242)`;
         });
         
         // Mouse leave handler - reset card
         card.addEventListener('mouseleave', function() {
-            card.style.transform = `
-                perspective(1000px)
-                rotateX(0deg)
-                rotateY(0deg)
-                scale3d(1, 1, 1)
-            `;
-            card.style.boxShadow = '0 4px 20px rgba(28, 8, 84, 0.2)';
+            card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+            // Reset shadow to default
+            card.style.boxShadow = '0 8px 0 rgb(229, 225, 242)';
         });
         
         // Add subtle parallax to image inside card

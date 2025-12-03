@@ -113,7 +113,7 @@ nav {
     margin: 0 auto;
 }
 
-.site-name a{
+.site-name, .site-name a{
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -272,20 +272,15 @@ main {
     text-decoration: none;
     color: inherit;
     background-color: #f8f8f8;
+    border: 2px solid rgb(229, 225, 242);
     border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.module-card:hover,
-.module-card:focus {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 0 rgb(229, 225, 242);
 }
 
 .module-image {
     width: 100%;
-    height: 220px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -693,7 +688,7 @@ footer {
     gap: 1rem;
 }
 
-.footer-site-name a{
+.footer-site-name, .footer-site-name a{
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
