@@ -113,11 +113,12 @@ nav {
     margin: 0 auto;
 }
 
-.site-name {
-    font-size: 1rem;
+.site-name a{
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: #1a1a1a;
+    color: rgb(21, 5, 56);
+    text-decoration: none;
     order: 1;
 }
 
@@ -679,20 +680,22 @@ main {
 footer {
     background-color: #1a1a1a;
     color: #ffffff;
-    padding: 2rem 1.25rem;
+    padding: 2rem 4rem;
     margin-top: 3rem;
 }
 
 .footer-content {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
-.footer-site-name {
+.footer-site-name a{
+    color: white;
+    text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -703,7 +706,8 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.6rem 1.2rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -719,6 +723,11 @@ footer {
 .footer-nav a:hover,
 .footer-nav a:focus {
     opacity: 0.6;
+}
+
+.footer-author, .footer-author a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .footer-content > p:last-child {
@@ -757,8 +766,10 @@ footer {
         font-size: 0.95rem;
     }
 
-    .site-name {
-        font-size: 1.25rem;
+    .site-name a{
+        color: rgb(21, 5, 56);
+        text-decoration: none;
+        font-size: 1.4rem;
     }
 
     main {
@@ -956,13 +967,16 @@ footer {
         align-items: center;
     }
 
-    .footer-site-name {
+    .footer-site-name a {
+        color: white;
+        text-decoration: none;
         font-size: 1.25rem;
         text-align: left;
     }
 
     .footer-nav ul {
         justify-content: flex-start;
+        align-items: center;
     }
 
     .footer-nav a {
@@ -1109,6 +1123,6 @@ footer {
     }
 
     footer {
-        padding: 2rem;
+        padding: 2rem 4rem;
     }
 }
