@@ -1,7 +1,5 @@
-// confirmation-bias.js
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger Menu
+    // Hamburger
     const hamburger = document.querySelector('.hamburger');
     const navUl = document.querySelector('nav ul');
 
@@ -13,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.toggle('active');
         });
 
-        // Keyboard support for hamburger menu
+        // Keyboard nav for hamburger
         hamburger.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -30,14 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-// Rest of the module-specific code continues below...
+// Interactive module
     const submitBtn = document.getElementById('submit-evidence');
     const resetBtn = document.getElementById('reset-btn');
     const feedback = document.getElementById('feedback');
     const feedbackText = document.getElementById('feedback-text');
     const checkboxes = document.querySelectorAll('input[name="evidence"]');
 
-    // Make feedback focusable for accessibility
     feedback.setAttribute('tabindex', '-1');
 
     submitBtn.addEventListener('click', analyzeSelections);
@@ -82,10 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
         feedbackText.textContent = resultMessage;
         feedback.classList.remove('hidden');
         
-        // Smooth scroll to feedback
+        // Smooth scroll
         feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         
-        // Move focus to feedback for screen readers
         setTimeout(() => {
             feedback.focus();
         }, 500);

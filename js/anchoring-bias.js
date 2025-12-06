@@ -1,7 +1,5 @@
-// anchoring-bias.js
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger Menu
+    // Hamburger
     const hamburger = document.querySelector('.hamburger');
     const navUl = document.querySelector('nav ul');
 
@@ -13,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.toggle('active');
         });
 
-        // Keyboard support for hamburger menu
+        // Keyboard nav for hamburger
         hamburger.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -30,8 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-// Rest of the module-specific code continues below...
-
+// Interactive module
     const anchorStage = document.getElementById('anchor-stage');
     const estimationStage = document.getElementById('estimation-stage');
     const feedback = document.getElementById('feedback');
@@ -42,18 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const resetBtn = document.getElementById('reset-btn');
     const priceInput = document.getElementById('price-estimate');
 
-    // Make feedback focusable for accessibility
     feedback.setAttribute('tabindex', '-1');
 
-    // Randomly assign user to high or low anchor group
+    // Randomly assign to high or low anchor
     const isHighAnchor = Math.random() > 0.5;
     const anchorValue = isHighAnchor ? 250 : 25;
     let userAnswer = '';
 
-    // Set the anchor question
+    // Anchor question
     anchorText.textContent = `Is the price of a wireless keyboard higher or lower than $${anchorValue}?`;
 
-    // Handle anchor question answers
+    // Anchor question answers
     answerButtons.forEach(button => {
         button.addEventListener('click', function() {
             userAnswer = this.dataset.answer;
@@ -62,10 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle price estimation
+    // Price estimation
     submitEstimateBtn.addEventListener('click', analyzeEstimate);
     
-    // Allow Enter key to submit
     priceInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             analyzeEstimate();
@@ -112,10 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
         feedback.classList.remove('hidden');
         estimationStage.classList.add('hidden');
         
-        // Smooth scroll to feedback
+        // Smooth scroll
         feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         
-        // Move focus to feedback for screen readers
         setTimeout(() => {
             feedback.focus();
         }, 500);
@@ -128,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         feedback.classList.add('hidden');
         priceInput.value = '';
         
-        // Generate new random anchor
+        // Generate random anchor
         const newIsHighAnchor = Math.random() > 0.5;
         const newAnchorValue = newIsHighAnchor ? 250 : 25;
         anchorText.textContent = `Is the price of a wireless keyboard higher or lower than $${newAnchorValue}?`;

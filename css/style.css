@@ -1,4 +1,4 @@
-/* Accessibility Utilities */
+/* Screen Reader Only */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -11,7 +11,7 @@
     border: 0;
 }
 
-/* Base Styles */
+/* Universal Styles */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: radial-gradient(circle at 20% 50%, #fcfbff 0%, #f0f4ff 50%, #f8fcff 100%);
@@ -91,7 +91,7 @@ body::before {
     font-weight: 500;
 }
 
-/* Header & Navigation */
+/* Header & Nav */
 header {
     position: fixed;
     top: 0;
@@ -196,7 +196,7 @@ nav ul.nav-open {
     text-underline-offset: 4px;
 }
 
-/* Focus Style */
+/* Focus Styles */
 .nav-item a:focus,
 .skip a:focus,
 .module-card:focus,
@@ -319,7 +319,7 @@ main {
     margin: 0;
 }
 
-/* Module Header - Two Column Layout */
+/* Module Page Layout */
 .module-header {
     max-width: 1200px;
     margin: 0 auto;
@@ -402,7 +402,7 @@ legend {
     padding: 0;
 }
 
-/* Evidence Container - Confirmation Bias */
+/* Evidence Container for Confirmation Bias */
 .evidence-container {
     display: flex;
     flex-direction: column;
@@ -438,7 +438,7 @@ legend {
     flex: 1;
 }
 
-/* Anchor Container - Anchoring Bias */
+/* Anchor Container for Anchoring Bias */
 .anchor-container,
 .estimation-container,
 .news-container,
@@ -506,7 +506,7 @@ legend {
     margin: 1.5rem auto 0;
 }
 
-/* Price Input */
+/* Price Input for Anchoring Bias */
 .input-group {
     max-width: 400px;
     margin: 1.5rem auto;
@@ -543,7 +543,7 @@ legend {
     outline: none;
 }
 
-/* News Container - Availability Bias */
+/* News Container for Availability Bias */
 .news-article {
     margin-bottom: 1.5rem;
 }
@@ -568,7 +568,7 @@ legend {
     margin: 0;
 }
 
-/* Question Stage */
+/* Question Stage for Availability Bias */
 .question-prompt {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -613,7 +613,7 @@ legend {
     text-align: left;
 }
 
-/* Feedback */
+/* Feedback for all modules */
 .feedback {
     background-color: white;
     padding: 1.5rem;
@@ -665,7 +665,7 @@ legend {
     display: none;
 }
 
-/* Learn More */
+/* Learn More for all modules */
 .learn-more {
     max-width: 1200px;
     margin: 0 auto;
@@ -749,12 +749,10 @@ footer {
 
 /* Tablet Styles */
 @media (min-width: 768px) {
-    /* Hide hamburger on tablet and above */
     .hamburger {
         display: none;
     }
 
-    /* Show navigation normally */
     nav {
         padding: 1rem 2rem;
     }
@@ -825,7 +823,6 @@ footer {
         font-size: 1rem;
     }
 
-    /* Two Column Layout for Module Header */
     .module-header {
         flex-direction: row;
         align-items: center;
@@ -1029,17 +1026,6 @@ footer {
         padding: 2rem 4rem 8rem;
         gap: 2.5rem;
         perspective: 1000px;
-    }
-
-    /* Maintain hover state - override the book transformation on hover */
-    .module-card:first-child:hover,
-    .module-card:first-child:focus {
-        transform: rotateY(8deg) translateY(-8px);
-    }
-
-    .module-card:last-child:hover,
-    .module-card:last-child:focus {
-        transform: rotateY(-8deg) translateY(-8px);
     }
 
     .module-image {

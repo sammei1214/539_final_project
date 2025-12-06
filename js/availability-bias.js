@@ -1,7 +1,5 @@
-// availability-bias.js
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger Menu
+    // Hamburger
     const hamburger = document.querySelector('.hamburger');
     const navUl = document.querySelector('nav ul');
 
@@ -13,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.toggle('active');
         });
 
-        // Keyboard support for hamburger menu
+        // Keyboard nav for hamburger
         hamburger.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -30,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-// Rest of the module-specific code continues below...
+// Interactive module
     const newsStage = document.getElementById('news-stage');
     const questionStage = document.getElementById('question-stage');
     const feedback = document.getElementById('feedback');
@@ -41,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const timerDisplay = document.getElementById('timer');
     const optionButtons = document.querySelectorAll('.option-btn');
 
-    // Make feedback focusable for accessibility
     feedback.setAttribute('tabindex', '-1');
 
     const questions = [
@@ -135,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         currentQuestion++;
 
-        // Small delay before next question
+        // Delay before next question
         setTimeout(function() {
             if (currentQuestion < questions.length) {
                 displayQuestion();
@@ -168,10 +165,9 @@ document.addEventListener('DOMContentLoaded', function() {
         feedbackText.textContent = resultMessage;
         feedback.classList.remove('hidden');
         
-        // Smooth scroll to feedback
+        // Smooth scroll
         feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         
-        // Move focus to feedback for screen readers
         setTimeout(() => {
             feedback.focus();
         }, 500);
