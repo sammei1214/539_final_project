@@ -71,39 +71,5 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reset shadow to default
             card.style.boxShadow = '0 8px 0 rgb(229, 225, 242)';
         });
-        
-        // Add subtle parallax to image inside card
-        const cardImage = card.querySelector('.module-image img');
-        if (cardImage) {
-            card.addEventListener('mousemove', function(e) {
-                const rect = card.getBoundingClientRect();
-                const mouseX = e.clientX - rect.left;
-                const mouseY = e.clientY - rect.top;
-                
-                const moveX = (mouseX / rect.width - 0.5) * 10;
-                const moveY = (mouseY / rect.height - 0.5) * 10;
-                
-                cardImage.style.transform = `
-                    translate(${moveX}px, ${moveY}px)
-                    scale(1.1)
-                `;
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                cardImage.style.transform = 'translate(0, 0) scale(1)';
-            });
-        }
-    });
-    
-    // Optional: Add subtle floating animation on page load
-    moduleCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        
-        setTimeout(() => {
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 100 * index);
     });
 });

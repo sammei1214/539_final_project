@@ -82,7 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const q = questions[currentQuestion];
         questionText.textContent = q.question;
         optionButtons[0].textContent = q.optionA;
+        optionButtons[0].setAttribute('aria-label', q.optionA);
         optionButtons[1].textContent = q.optionB;
+        optionButtons[1].setAttribute('aria-label', q.optionB);
 
         // Reset and start timer
         timeRemaining = 15;

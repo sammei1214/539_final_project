@@ -100,7 +100,6 @@ header {
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -122,7 +121,7 @@ nav {
     order: 1;
 }
 
-/* Hamburger button - mobile only */
+/* Hamburger button */
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -134,8 +133,8 @@ nav {
     order: 2;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
 }
 
 .hamburger-line {
@@ -157,7 +156,7 @@ nav {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* Mobile navigation - hidden by default */
+/* Mobile nav */
 nav ul {
     display: none;
     flex-direction: column;
@@ -197,7 +196,7 @@ nav ul.nav-open {
     text-underline-offset: 4px;
 }
 
-/* Focus Styles for Accessibility */
+/* Focus Style */
 .nav-item a:focus,
 .skip a:focus,
 .module-card:focus,
@@ -208,21 +207,25 @@ nav ul.nav-open {
 .evidence-item input[type="checkbox"]:focus,
 .price-input input:focus,
 .hamburger:focus {
-    outline: 3px solid #2b0d8c;
+    outline: 2px solid #2b0d8c;
     outline-offset: 2px;
+    border-radius: 2px;
 }
 
 .answer-btn:focus-visible,
 .submit-btn:focus-visible,
 .reset-btn:focus-visible,
 .option-btn:focus-visible {
-    outline: 3px solid #2b0d8c;
+    outline: 2px solid #2b0d8c;
     outline-offset: 2px;
+    border-radius: 2px;
+
 }
 
 .footer-nav a:focus {
-    outline: 3px solid #ffffff;
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
+    border-radius: 2px;
 }
 
 
@@ -276,6 +279,7 @@ main {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 0 rgb(229, 225, 242);
+    transition: all ease-in-out 0.1s;
 }
 
 .module-image {
@@ -293,7 +297,7 @@ main {
 
 .module-card:hover .module-image img,
 .module-card:focus .module-image img {
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 
 .module-content {
@@ -384,6 +388,18 @@ main {
     line-height: 1.6;
     color: #595959;
     margin: 0;
+}
+
+/* Fieldset style */
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+legend {
+    padding: 0;
 }
 
 /* Evidence Container - Confirmation Bias */
@@ -1013,15 +1029,6 @@ footer {
         padding: 2rem 4rem 8rem;
         gap: 2.5rem;
         perspective: 1000px;
-    }
-
-    /* Book-like transformation for left and right cards */
-    .module-card:first-child {
-        transform: rotateY(8deg);
-    }
-
-    .module-card:last-child {
-        transform: rotateY(-8deg);
     }
 
     /* Maintain hover state - override the book transformation on hover */
